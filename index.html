@@ -3,53 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IronThread Tech | IT Consulting & Service Alignment</title>
-  <meta name="description" content="IronThread Tech helps organizations stabilize IT operations, align service delivery, reduce contract drift, and improve MSP performance through practical consulting and operational leadership." />
+
+  <title>Iron Thread | IT Field Services, Dispatch & Consulting</title>
+  <meta name="description" content="Iron Thread provides IT field services, dispatch support, infrastructure support, and consulting across network, security, server, storage, cloud, desktop, and MSP service delivery environments." />
 
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0d1b2e;
-      --panel: #10243d;
-      --panel-light: #16314f;
+      --bg: #050b14;
+      --bg-deep: #02060c;
+      --panel: rgba(12, 28, 48, 0.82);
+      --panel-strong: rgba(15, 38, 65, 0.92);
       --text: #f4f7fb;
-      --muted: #b9c6d6;
-      --blue: #2f80ed;
-      --blue-light: #5aa2ff;
-      --silver: #d7dde6;
+      --muted: #b8c5d5;
+      --blue: #22a9e8;
+      --blue-deep: #1474b8;
+      --silver: #d9e1ea;
       --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top left, #12345a 0, #07111f 42%, #050b14 100%);
+      background:
+        radial-gradient(circle at 78% 8%, rgba(34, 169, 232, 0.18), transparent 28%),
+        radial-gradient(circle at 12% 45%, rgba(20, 116, 184, 0.18), transparent 32%),
+        linear-gradient(180deg, var(--bg-deep), var(--bg) 42%, #030811);
       color: var(--text);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
 
     header {
       position: sticky;
       top: 0;
       z-index: 10;
       backdrop-filter: blur(14px);
-      background: rgba(7, 17, 31, 0.84);
+      background: rgba(2, 6, 12, 0.82);
       border-bottom: 1px solid var(--border);
     }
 
@@ -57,77 +53,94 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 0;
+      gap: 24px;
+      padding: 14px 0;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(145deg, #132b47, #081421);
-      box-shadow: var(--shadow);
-      color: var(--blue-light);
       font-weight: 800;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
     }
 
-    .brand span {
-      color: var(--silver);
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 12px 30px rgba(34, 169, 232, 0.18);
     }
+
+    .brand .thread { color: var(--blue); }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 24px;
+      gap: 22px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    nav a:hover {
-      color: var(--text);
-    }
+    nav a:hover { color: var(--text); }
 
     .hero {
-      padding: 96px 0 72px;
+      position: relative;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 42px;
-      align-items: center;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(2, 6, 12, 0.96) 0%, rgba(2, 6, 12, 0.79) 44%, rgba(2, 6, 12, 0.28) 100%),
+        url("assets/iron-thread-banner-consulting.png") center right / cover no-repeat;
+      opacity: 0.92;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 160px;
+      background: linear-gradient(180deg, transparent, var(--bg));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(780px, 92%);
+      padding: 108px 0 86px;
     }
 
     .eyebrow {
-      color: var(--blue-light);
+      color: var(--blue);
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 2.4px;
       font-size: 0.8rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      line-height: 1.02;
+      font-size: clamp(2.6rem, 7vw, 5.65rem);
+      line-height: 0.98;
       margin-bottom: 24px;
-      letter-spacing: -2px;
+      letter-spacing: -2.6px;
+      text-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
     }
 
     .hero p {
       color: var(--muted);
-      font-size: 1.15rem;
-      max-width: 680px;
+      font-size: 1.17rem;
+      max-width: 710px;
       margin-bottom: 32px;
     }
 
@@ -143,20 +156,23 @@
       justify-content: center;
       padding: 13px 20px;
       border-radius: 10px;
-      font-weight: 700;
+      font-weight: 800;
       border: 1px solid var(--border);
       transition: 0.2s ease;
       cursor: pointer;
+      font-size: 0.98rem;
     }
 
     .btn-primary {
-      background: var(--blue);
+      background: linear-gradient(135deg, var(--blue), var(--blue-deep));
       color: white;
-      border-color: var(--blue);
+      border-color: rgba(34, 169, 232, 0.65);
+      box-shadow: 0 12px 30px rgba(34, 169, 232, 0.2);
     }
 
     .btn-primary:hover {
-      background: var(--blue-light);
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(34, 169, 232, 0.28);
     }
 
     .btn-secondary {
@@ -164,57 +180,17 @@
       background: rgba(255, 255, 255, 0.04);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.08); }
 
-    .hero-card {
-      background: linear-gradient(160deg, rgba(22, 49, 79, 0.95), rgba(8, 20, 33, 0.95));
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-    }
+    section { padding: 76px 0; }
 
-    .hero-card h2 {
-      font-size: 1.4rem;
-      margin-bottom: 18px;
-    }
-
-    .metric {
-      padding: 18px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .metric:first-of-type {
-      border-top: none;
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 1.9rem;
-      color: var(--blue-light);
-      line-height: 1.1;
-    }
-
-    .metric span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    section {
-      padding: 76px 0;
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 38px;
-    }
+    .section-heading { max-width: 820px; margin-bottom: 38px; }
 
     .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.08;
       margin-bottom: 16px;
+      letter-spacing: -1px;
     }
 
     .section-heading p {
@@ -229,11 +205,12 @@
     }
 
     .card {
-      background: rgba(16, 36, 61, 0.78);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 26px;
       min-height: 230px;
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
     }
 
     .card h3 {
@@ -241,19 +218,25 @@
       color: var(--silver);
     }
 
-    .card p {
-      color: var(--muted);
+    .card p, .card li { color: var(--muted); }
+
+    .card ul {
+      margin-left: 18px;
+      display: grid;
+      gap: 7px;
     }
 
     .band {
-      background: linear-gradient(90deg, rgba(47, 128, 237, 0.16), rgba(255, 255, 255, 0.04));
+      background:
+        linear-gradient(90deg, rgba(34, 169, 232, 0.14), rgba(255, 255, 255, 0.035)),
+        rgba(255, 255, 255, 0.015);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
     .two-column {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 0.95fr 1.05fr;
       gap: 34px;
       align-items: start;
     }
@@ -265,18 +248,16 @@
 
     .list-item {
       padding: 18px;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.045);
       border: 1px solid var(--border);
       border-radius: 14px;
       color: var(--muted);
     }
 
-    .list-item strong {
-      color: var(--text);
-    }
+    .list-item strong { color: var(--text); }
 
     .about-panel {
-      background: rgba(16, 36, 61, 0.8);
+      background: var(--panel-strong);
       border: 1px solid var(--border);
       border-radius: 22px;
       padding: 30px;
@@ -288,30 +269,65 @@
       margin-bottom: 16px;
     }
 
+    .about-panel p:last-child { margin-bottom: 0; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .stat {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--blue);
+      font-size: 1.8rem;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     .contact {
       text-align: center;
-      background: linear-gradient(180deg, rgba(16, 36, 61, 0.7), rgba(7, 17, 31, 0.9));
+      background:
+        linear-gradient(180deg, rgba(15, 38, 65, 0.9), rgba(5, 11, 20, 0.92)),
+        url("assets/iron-thread-banner-centered.png") center / cover no-repeat;
+      background-blend-mode: multiply;
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 46px 28px;
+      padding: 52px 28px;
       box-shadow: var(--shadow);
     }
 
     .contact h2 {
       font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: 14px;
+      letter-spacing: -1px;
     }
 
     .contact p {
       color: var(--muted);
       max-width: 680px;
-      margin: 0 auto 22px;
+      margin: 0 auto 26px;
     }
 
-    .contact-note {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 14px;
+    .email-reveal {
+      margin-top: 18px;
+      color: var(--silver);
+      font-weight: 700;
+      min-height: 28px;
+      word-break: break-word;
     }
 
     footer {
@@ -328,20 +344,20 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 860px) {
-      nav ul {
-        display: none;
+    @media (max-width: 900px) {
+      nav ul { display: none; }
+
+      .hero { min-height: auto; }
+
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(2, 6, 12, 0.74), rgba(2, 6, 12, 0.94)),
+          url("assets/iron-thread-banner-consulting.png") center / cover no-repeat;
       }
 
-      .hero-grid,
-      .two-column,
-      .cards {
-        grid-template-columns: 1fr;
-      }
+      .hero-content { padding: 92px 0 72px; }
 
-      .hero {
-        padding-top: 72px;
-      }
+      .two-column, .cards, .stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -349,16 +365,16 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#">
-        <div class="brand-mark">IT</div>
-        <div>IronThread <span>Tech</span></div>
+      <a class="brand" href="#" aria-label="Iron Thread home">
+        <img src="assets/iron-thread-square.png" alt="Iron Thread logo" />
+        <div>Iron <span class="thread">Thread</span></div>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#field-services">Field Services</a></li>
+          <li><a href="#consulting">Consulting</a></li>
           <li><a href="#approach">Approach</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -367,160 +383,161 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">IT Consulting • MSP Alignment • Service Delivery</div>
-          <h1>Stronger IT operations, woven with clarity and discipline.</h1>
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">IT Field Services • Dispatch • Consulting</div>
+          <h1>Reliable IT field execution backed by senior service leadership.</h1>
           <p>
-            IronThread Tech helps organizations stabilize service delivery, improve MSP performance,
-            reduce operational drift, and bring practical structure back to complex IT environments.
+            Iron Thread provides field technician dispatch, infrastructure support, and practical IT consulting
+            for organizations that need capable hands onsite and experienced guidance behind the work.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Start a Conversation</a>
-            <a class="btn btn-secondary" href="#services">Explore Services</a>
+            <a class="btn btn-primary" href="#contact">Request Support</a>
+            <a class="btn btn-secondary" href="#field-services">View Capabilities</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>20+ years</strong>
+              <span>IT, MSP, service delivery, and operational leadership experience.</span>
+            </div>
+            <div class="stat">
+              <strong>Field-ready</strong>
+              <span>Onsite dispatch support for infrastructure, endpoint, network, and technical work.</span>
+            </div>
+            <div class="stat">
+              <strong>Practical</strong>
+              <span>Clear communication, documented work, and escalation-aware execution.</span>
+            </div>
           </div>
         </div>
-
-        <aside class="hero-card">
-          <h2>Built for real operational pressure.</h2>
-
-          <div class="metric">
-            <strong>20+ years</strong>
-            <span>IT, MSP, service delivery, and operational leadership experience.</span>
-          </div>
-
-          <div class="metric">
-            <strong>98–100%</strong>
-            <span>Targeted SLA stabilization through governance, process correction, and accountability.</span>
-          </div>
-
-          <div class="metric">
-            <strong>$25M+</strong>
-            <span>Experience managing large-scale service operations and commercial delivery responsibility.</span>
-          </div>
-        </aside>
       </div>
     </section>
 
-    <section id="services">
+    <section id="field-services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>IT field services and technical dispatch.</h2>
+          <p>
+            Iron Thread supports onsite technical work for businesses, platforms, managed service providers,
+            and buyers needing professional field execution across core IT environments.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Network</h3>
+            <p>Installation, troubleshooting, rack work, patching, access points, connectivity validation, and onsite network support.</p>
+          </div>
+
+          <div class="card">
+            <h3>Security</h3>
+            <p>Physical security technology support including cameras, access control coordination, cabling support, and device-level assistance.</p>
+          </div>
+
+          <div class="card">
+            <h3>Server</h3>
+            <p>Hands-on support for server rooms, hardware swaps, rack/stack activity, smart-hands work, and guided remediation.</p>
+          </div>
+
+          <div class="card">
+            <h3>Storage</h3>
+            <p>Onsite assistance for storage hardware, cabling, labeling, physical checks, and vendor-directed support tasks.</p>
+          </div>
+
+          <div class="card">
+            <h3>Cloud & Infrastructure</h3>
+            <p>Local execution for cloud-connected infrastructure, branch office technology, remote-guided work, and hybrid environment support.</p>
+          </div>
+
+          <div class="card">
+            <h3>Desktop & End User</h3>
+            <p>Deskside support, PC deployment, refresh work, printer/device assistance, software support, and user-facing technical help.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consulting" class="band">
       <div class="container">
         <div class="section-heading">
           <h2>Consulting services designed for practical outcomes.</h2>
           <p>
-            IronThread focuses on the points where IT delivery often breaks down: unclear ownership,
-            contract drift, under-documented scope, weak governance, and service models that no longer match reality.
+            Beyond dispatch, Iron Thread helps organizations address service delivery gaps, unclear ownership,
+            contract drift, weak governance, and service models that no longer match operational reality.
           </p>
         </div>
 
         <div class="cards">
           <div class="card">
             <h3>Service Alignment</h3>
-            <p>
-              Evaluate whether the current support model, staffing, ticket flow, escalation process,
-              and customer expectations are aligned with the actual contracted service.
-            </p>
+            <p>Evaluate whether staffing, ticket flow, escalation paths, customer expectations, and contracted service models are properly aligned.</p>
           </div>
 
           <div class="card">
             <h3>MSP Performance Improvement</h3>
-            <p>
-              Improve SLA performance, operational cadence, reporting discipline, knowledge management,
-              ticket hygiene, and service review structure.
-            </p>
+            <p>Improve SLA performance, operational cadence, reporting discipline, knowledge management, ticket hygiene, and service review structure.</p>
           </div>
 
           <div class="card">
             <h3>Contract & Scope Review</h3>
-            <p>
-              Identify where work has drifted beyond the intended model and help distinguish BAU support,
-              project work, value-add activity, and billable exceptions.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Operational Governance</h3>
-            <p>
-              Build a stronger rhythm around weekly reviews, monthly service reviews, action tracking,
-              accountability, stakeholder communication, and escalation handling.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Field Services & Deskside Strategy</h3>
-            <p>
-              Support organizations with practical field operations structure, dispatch models,
-              onsite support expectations, hardware lifecycle activity, and end-user support delivery.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Leadership Advisory</h3>
-            <p>
-              Provide experienced guidance for service leaders facing customer escalations,
-              staffing challenges, delivery gaps, and operational ambiguity.
-            </p>
+            <p>Identify where work has drifted beyond the intended model and separate BAU support, project work, value-add activity, and billable exceptions.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="approach" class="band">
+    <section id="approach">
       <div class="container two-column">
         <div class="section-heading">
-          <h2>Integrity-driven consulting for complex IT environments.</h2>
+          <h2>Professional field work with executive-level discipline.</h2>
           <p>
-            IronThread is not built around buzzwords or generic recommendations. The focus is on finding
-            where the operating model is strained, where expectations are unclear, and where practical
-            correction can restore trust.
+            Iron Thread is built to bridge the gap between hands-on execution and service leadership.
+            The goal is not only to complete the task, but to communicate clearly, document properly,
+            and recognize risk before it becomes a larger issue.
           </p>
         </div>
 
         <div class="list">
           <div class="list-item">
-            <strong>Clarity before correction.</strong><br />
-            Understand the service model, the customer reality, the team constraints, and the contractual boundaries.
+            <strong>Clear dispatch execution.</strong><br />
+            Scope review, onsite assessment, technical execution, status communication, and completion notes.
           </div>
 
           <div class="list-item">
-            <strong>Operational discipline over noise.</strong><br />
-            Focus on measurable improvement, documented ownership, governance rhythm, and sustainable execution.
+            <strong>Escalation-aware support.</strong><br />
+            Field work is approached with an understanding of customer impact, buyer expectations, and MSP delivery realities.
           </div>
 
           <div class="list-item">
-            <strong>Fairness to customer and provider.</strong><br />
-            Align expectations without ignoring the commercial realities, staffing limits, or human impact of service delivery.
+            <strong>Professional documentation.</strong><br />
+            Work notes, photos when appropriate, issue summaries, material needs, and practical next steps.
           </div>
 
           <div class="list-item">
-            <strong>Practical recommendations.</strong><br />
-            Deliver guidance that leaders can actually act on, not oversized theory that fails in the field.
+            <strong>Fair and direct communication.</strong><br />
+            Honest updates when scope, site conditions, materials, access, or technical requirements do not match the request.
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="band">
       <div class="container two-column">
         <div class="section-heading">
-          <h2>About IronThread Tech</h2>
+          <h2>About Iron Thread</h2>
           <p>
-            IronThread Tech was founded to help organizations address the hard middle ground between
-            customer expectations, MSP delivery realities, contract interpretation, and operational execution.
+            Iron Thread was founded to provide practical IT field support and consulting with the professionalism,
+            structure, and judgment expected from senior service delivery leadership.
           </p>
         </div>
 
         <div class="about-panel">
           <p>
-            Led by Josh Kendall, Principal Consultant, IronThread brings more than two decades of experience
+            Led by Josh Kendall, Principal Consultant, Iron Thread brings more than two decades of experience
             across IT operations, service delivery, deskside support, infrastructure support, field services,
             and global MSP environments.
-          </p>
-
-          <p>
-            The IronThread approach is grounded in a simple belief: strong service delivery requires more
-            than effort. It requires structure, accountability, clear scope, honest communication, and a
-            service model that reflects reality.
           </p>
 
           <p>
@@ -534,14 +551,14 @@
     <section id="contact">
       <div class="container">
         <div class="contact">
-          <h2>Ready to strengthen your IT service model?</h2>
+          <h2>Need onsite IT support or service delivery guidance?</h2>
           <p>
-            Whether you are dealing with service drift, MSP performance concerns, unclear ownership,
-            customer escalations, or operational instability, IronThread can help create a practical path forward.
+            For field dispatches, infrastructure work, desktop support, network/security tasks, or consulting conversations,
+            Iron Thread can help create a practical path forward.
           </p>
 
-          <button class="btn btn-primary" type="button" id="contactButton">Show Contact Email</button>
-          <div class="contact-note" id="contactEmail" aria-live="polite"></div>
+          <button class="btn btn-primary" type="button" id="revealEmail">Show Contact Email</button>
+          <div class="email-reveal" id="emailDisplay" aria-live="polite"></div>
         </div>
       </div>
     </section>
@@ -549,25 +566,26 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 IronThread Tech. All rights reserved.</div>
+      <div>© 2026 Iron Thread. All rights reserved.</div>
       <div>Virtue, although challenged, will rise again.</div>
     </div>
   </footer>
 
   <script>
-    const contactButton = document.getElementById('contactButton');
-    const contactEmail = document.getElementById('contactEmail');
+    (function () {
+      const button = document.getElementById("revealEmail");
+      const display = document.getElementById("emailDisplay");
 
-    contactButton.addEventListener('click', function () {
-      const user = ['c', 'o', 'n', 't', 'a', 'c', 't'].join('');
-      const domain = ['i', 'r', 'o', 'n', 't', 'h', 'r', 'e', 'a', 'd', 't', 'e', 'c', 'h'].join('');
-      const tld = ['c', 'o', 'm'].join('');
-      const email = user + '@' + domain + '.' + tld;
+      const userParts = ["contact"];
+      const domainParts = ["iron", "thread", "tech"];
+      const tld = "com";
 
-      contactEmail.innerHTML = 'Email: <strong>' + email + '</strong>';
-      contactButton.textContent = 'Contact Email Displayed';
-      contactButton.disabled = true;
-    });
+      button.addEventListener("click", function () {
+        const address = userParts.join("") + "@" + domainParts.join("") + "." + tld;
+        display.textContent = address;
+        button.textContent = "Email Revealed";
+      });
+    })();
   </script>
 </body>
 </html>
